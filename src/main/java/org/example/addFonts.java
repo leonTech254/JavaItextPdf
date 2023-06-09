@@ -1,6 +1,7 @@
 package org.example;
 
 import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.kernel.color.Color;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -21,7 +22,7 @@ public class addFonts {
         Document document = new Document(pdfDocument);
         PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
         PdfFont boldFont = PdfFontFactory.createFont(FontConstants.COURIER_BOLD);
-
+//basics adding of fonts
         Text heading = new Text("LEONTEQSECURITY").setFont(boldFont);
         Text desc = new Text("this is a cyber security company").setFont(font);
         Paragraph paragraph = new Paragraph(heading);
@@ -29,6 +30,15 @@ public class addFonts {
 
         document.add(paragraph);
         document.add(paragraph2);
+
+//bod itallic coloring
+        PdfFont itallic= PdfFontFactory.createFont(FontConstants.COURIER_BOLD);
+        Text qust = new Text("oOOOOOOOOCH!!! i am hacked!!!!").setFont(font)
+                .setBackgroundColor(Color.CYAN).
+                setUnderline().
+                setFontColor(Color.RED);
+        Paragraph par3 = new Paragraph(qust);
+        document.add(par3);
 
 
 
