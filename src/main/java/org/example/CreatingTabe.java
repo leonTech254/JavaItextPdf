@@ -1,5 +1,6 @@
 package org.example;
 
+import com.itextpdf.kernel.color.Color;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -50,13 +51,14 @@ public class CreatingTabe {
 
 
         Table table = new Table(tableColumn);
-        table.addCell(new Cell().add(tableHeader[0]));
+        table.addCell(new Cell().add(tableHeader[0]).setBackgroundColor(Color.CYAN));
         table.addCell(new Cell().add(tableHeader[1]));
         // Printing the values in the array
         for (String[] item : itemsArray) {
             table.addCell(new Cell().add(item[0]));
             table.addCell(new Cell().add(item[1]));
         }
+        table.setBackgroundColor(Color.BLUE);
 
 
         document.add(table);
