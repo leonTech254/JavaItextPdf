@@ -7,8 +7,10 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.Style;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
+import com.itextpdf.layout.property.TextAlignment;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -39,6 +41,21 @@ public class addFonts {
                 setFontColor(Color.RED);
         Paragraph par3 = new Paragraph(qust);
         document.add(par3);
+//using Style oject
+        Style author = new Style();
+        author.setFontColor(Color.BLUE)
+                .setFontSize(30f)
+                .setItalic()
+                .setTextAlignment(TextAlignment.CENTER)
+                .setUnderline()
+        ;
+
+Text sqlInjection = new Text("TOPIC:SQL INJECTION").addStyle(author);
+Paragraph paragraph4 = new Paragraph(sqlInjection);
+document.add(paragraph4);
+
+
+
 
 
 
